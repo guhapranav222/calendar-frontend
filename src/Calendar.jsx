@@ -59,8 +59,6 @@ function MonthCalendar({ year, month, events, onAddEvent }) {
     });
   }
 
-
-  
   return (
     <div className="month-container">
       <div className="month-header">
@@ -117,7 +115,7 @@ export default function Calendar() {
 
   const handleAddEvent = (date, month) => {
     const eventText = window.prompt(
-      `Add event for ${MONTH_NAMES[month]} ${date}, ${currentYear}:`
+      `🎉 Add event for ${MONTH_NAMES[month]} ${date}, ${currentYear}:`
     );
     if (eventText && eventText.trim()) {
       const key = getDateKey(currentYear, month, date);
@@ -135,16 +133,18 @@ export default function Calendar() {
           className="calendar-nav"
           onClick={prevYear}
           aria-label="Previous Year"
+          title="Previous Year"
         >
-          &#8592;
+          ←
         </button>
-        <span className="calendar-title">{currentYear}</span>
+        <span className="calendar-title">✨ {currentYear} ✨</span>
         <button
           className="calendar-nav"
           onClick={nextYear}
           aria-label="Next Year"
+          title="Next Year"
         >
-          &#8594;
+          →
         </button>
       </div>
       <div className="year-grid">
